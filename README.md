@@ -18,11 +18,11 @@ A plain Vagrant setup script to get Drupal 8 up and running quickly.
 
 1. Clone this Vagrant setup file onto your computer somewhere:
 
-        git clone --recursive git@github.com:mparker17/vagrant-drupal.git
+        git clone --recursive git@github.com:mparker17/vagrant-drupal8.git
 
 2. Change into the directory you just created.
 
-        cd vagrant-drupal
+        cd vagrant-drupal8
 
 3. Start Vagrant.
 

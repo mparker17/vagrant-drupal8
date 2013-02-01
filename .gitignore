@@ -1,0 +1,3 @@
+data/html
+data/db/*.sql
+.vagrant

@@ -8,7 +8,7 @@
 #
 Vagrant::Config.run do |config|
   # Repackaging settings.
-  config.package.name = "drupal8.box"
+  config.package.name = "drupal7.box"
 
   # Shared folder settings. To use NFS folders, we have to use host-only
   # networking.
@@ -21,7 +21,7 @@ Vagrant::Config.run do |config|
   config.vm.box = "precise64"
   config.vm.box_url = "http://files.vagrantup.com/precise64.box"
   config.vm.forward_port 80, 8080
-  config.vm.host_name = "drupal8.dev"
+  config.vm.host_name = "drupal7.dev"
   config.vm.customize [
   ]
 
@@ -59,6 +59,6 @@ Vagrant::Config.run do |config|
     chef.add_recipe("vim")
 
     # Finally, install the project.
-    chef.add_recipe("drupal8")
+    chef.add_recipe("drupal7")
   end
 end

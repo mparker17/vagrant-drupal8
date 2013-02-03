@@ -68,6 +68,12 @@ mysql_database_user site['dbusername'] do
     privileges [:all]
     action :create
 end
+mysql_database_user site['dbusername'] do
+  connection root_database_connection
+  password site['dbpassword']
+  action :grant
+end
+
 git site['svrdocroot'] do
     user "vagrant"
     group "vagrant"

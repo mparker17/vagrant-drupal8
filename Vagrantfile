@@ -31,6 +31,12 @@ Vagrant::Config.run do |config|
   # Refresh package list before attempting to install software.
   config.vm.provision :shell, :inline => "apt-get update"
 
+  # Ensure we keep the SSH_AUTH_SOCK variable when sudoing.
+  config.vm.provision :shell do |shell|
+    shell.inline = "touch $1 && chmod 0440 $1 && echo $2 > $1"
+    shell.args = %q{/etc/sudoers.d/root_ssh_agent "Defaults env_keep += \"SSH_AUTH_SOCK\""}
+  end
+
   # Guest machine software specification.
   # Note that, when running `vagrant up`, the cookbooks specified in the
   # `add_recipe()` calls below **must already be present** in the directory

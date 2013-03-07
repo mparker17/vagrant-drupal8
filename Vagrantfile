@@ -26,7 +26,7 @@ Vagrant::Config.run do |config|
   ]
 
   # Allow developers to check out repositories.
-	config.ssh.forward_agent = true
+  config.ssh.forward_agent = true
 
   # Refresh package list before attempting to install software.
   config.vm.provision :shell, :inline => "apt-get update"
@@ -40,11 +40,11 @@ Vagrant::Config.run do |config|
 
     # Config.
     chef.json = {
-        "mysql" => {
-            "server_root_password" => "root",
-            "server_repl_password" => "root",
-            "server_debian_password" => "root"
-        }
+      "mysql" => {
+        "server_root_password" => "root",
+        "server_repl_password" => "root",
+        "server_debian_password" => "root"
+      }
     }
 
     # Webserver basics.

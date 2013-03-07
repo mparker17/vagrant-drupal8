@@ -10,4 +10,3 @@ recipe            "drupal8", "Main Drupal8 configuration."
 %w{ubuntu}.each do |os|
   supports os
 end
-

@@ -55,7 +55,20 @@ php_pear "drush" do
 end
 
 #
-# Set up site.
+# Apparently setting a user and group causes checkout to fail, so checkout as
+# root and fix the directory permissions afterwards.
+#
+# This may be related to https://github.com/mitchellh/vagrant/issues/1303 and
+# https://github.com/mitchellh/vagrant/pull/1307 .
+#
+git site['svrdocroot'] do
+    repository site['repository']
+    reference site['branch']
+    action :sync
+end
+
+#
+# Set up Drupal site.
 #
 mysql_database site['dbdatabase'] do
     connection root_database_connection
@@ -72,14 +85,6 @@ mysql_database_user site['dbusername'] do
   connection root_database_connection
   password site['dbpassword']
   action :grant
-end
-
-git site['svrdocroot'] do
-    user "vagrant"
-    group "vagrant"
-    repository "#{site['repository']}"
-    reference "#{site['branch']}"
-    action :sync
 end
 web_app site['svrname'] do
     server_name site['svrname']

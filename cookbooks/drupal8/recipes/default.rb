@@ -92,3 +92,11 @@ web_app site['svrname'] do
     allow_override "All"
     docroot site['svrdocroot']
 end
+template "#{site['drupalroot']}/settings.php" do
+  source "settings_d8.php.erb"
+  variables(
+    :username => site['dbusername'],
+    :password => site['dbpassword'],
+    :database => site['dbdatabase']
+  )
+end

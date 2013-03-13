@@ -27,3 +27,15 @@ A plain Vagrant setup script to get Drupal 8 up and running quickly.
 3. Start Vagrant.
 
         vagrant up
+
+4. On Linux and Windows, map `drupal8.dev` to the virtual machine in the host machine's `hosts` file.
+
+    Most of the time, the following line will work:
+
+        127.0.0.1 drupal8.dev
+
+5. Access the virtual machine by going to `http://drupal8.dev:8080/` in a web browser.
+
+## Notes ##
+
+* The virtual machine document root is mapped to `data/html` in the repository. This git repository ignores changes to that folder.

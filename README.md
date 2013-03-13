@@ -27,3 +27,11 @@ A plain Vagrant setup script to get Drupal 8 up and running quickly.
 3. Start Vagrant.
 
         vagrant up
+
+4. Add a DNS entry to map 192.168.33.10 to drupal8.dev (in linux : vi /etc/hosts, in windows c:\windows\windows32\drivers\etc\hosts)
+
+5. Access to http://drupal8.dev
+
+6. The documentRoot is shared via NFS in : <your_vagrant_drupal8_project>/data/html
+
+Enjoy !

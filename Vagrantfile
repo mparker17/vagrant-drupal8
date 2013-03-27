@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 #
 # @file
-# Specify settings for a Brady's Meat & Deli server.
+# Specify settings for a Drupal webserver.
 #
 # Vagrant v1.0.6
 #
@@ -40,7 +40,7 @@ Vagrant::Config.run do |config|
   # Guest machine software specification.
   # Note that, when running `vagrant up`, the cookbooks specified in the
   # `add_recipe()` calls below **must already be present** in the directory
-  # specified by `chef.cookbooks_path`. (i.e.: you git-clone--recurive'd).
+  # specified by `chef.cookbooks_path`. (i.e.: you git-clone--recursive'd).
   config.vm.provision :chef_solo do |chef|
     chef.cookbooks_path = "cookbooks"
 

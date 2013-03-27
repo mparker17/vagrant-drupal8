@@ -43,3 +43,4 @@ A plain Vagrant setup script to get Drupal 8 up and running quickly.
 ## Notes ##
 
 * The virtual machine document root is mapped to `data/html` in the repository. This git repository ignores changes to that folder.
+* Drupal core takes a LONG time to clone sometimes. If Chef times out while trying to clone Drupal, replace step 3 with `git clone --recursive --branch 8.x http://git.drupal.org/project/drupal.git data/html`. Don't forget to `vagrant destroy` first!

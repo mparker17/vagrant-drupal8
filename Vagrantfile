@@ -4,29 +4,25 @@
 # @file
 # Specify settings for a Drupal webserver.
 #
-# Vagrant v1.0.6
+# Vagrant v1.1.4
 #
-Vagrant::Config.run do |config|
-  # Repackaging settings.
-  config.package.name = "drupal8.box"
-
-  # Shared folder settings. To use NFS folders, we have to use host-only
-  # networking.
-  config.vm.network :hostonly, "192.168.33.10"
-  config.vm.share_folder "html", "/mnt/www", "data/html", {:nfs => TRUE, :create => TRUE}
-
-  # Guest machine settings.
-  # For more information about key-value pairs in config.vm.customize, see
-  # `modifyvm` in http://www.virtualbox.org/manual/ch08.html
+Vagrant.configure("2") do |config|
+  # Machine settings.
   config.vm.box = "precise64"
   config.vm.box_url = "http://files.vagrantup.com/precise64.box"
-  config.vm.forward_port 80, 8080
-  config.vm.host_name = "drupal8.dev"
-  config.vm.customize [
-  ]
+  config.vm.hostname = "drupal8.dev"
+  config.vm.network :forwarded_port, guest: 80, host: 8080
+  # To use NFS folders, we have to use a private (host-only) network with a
+  # static IP.
+  config.vm.network :private_network, ip: "192.168.33.10"
+  config.vm.synced_folder "./data/html", "/mnt/www", :nfs => true
 
-  # Allow developers to check out repositories.
+  # SSH settings.
   config.ssh.forward_agent = true
+
+  #
+  # Provision the machine.
+  #
 
   # Refresh package list before attempting to install software.
   config.vm.provision :shell, :inline => "apt-get update"

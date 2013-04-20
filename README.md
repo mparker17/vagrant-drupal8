@@ -4,7 +4,7 @@ A plain Vagrant setup script to get Drupal 8 up and running quickly.
 
 ## Requirements ##
 
-* A Linux or Macintosh host machine.
+* A Windows, Linux or Macintosh host machine.
     * On Macintosh, you'll need to run the [OSX GCC Installer][osx-gcc-installer] or install [Xcode][xcode] itself.
 * [VirtualBox v4.2.x][virtualbox].
 * [Vagrant v1.1.5][vagrant].

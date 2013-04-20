@@ -8,11 +8,11 @@ A plain Vagrant setup script to get Drupal 8 up and running quickly.
     * On Macintosh, you'll need to run the [OSX GCC Installer][osx-gcc-installer] or install [Xcode][xcode] itself.
     * On Windows, you'll have to change the line in the `Vagrantfile` that says
 
-          config.vm.synced_folder "./data/html", "/mnt/www", :nfs => true
+            config.vm.synced_folder "./data/html", "/mnt/www", :nfs => true
 
       … to …
 
-          config.vm.synced_folder "./data/html", "/mnt/www"
+            config.vm.synced_folder "./data/html", "/mnt/www"
 
       **Don't commit this change.**
 * [VirtualBox v4.2.x][virtualbox].

@@ -16,7 +16,7 @@ A plain Vagrant setup script to get Drupal 8 up and running quickly.
 
       **Don't commit this change.**
 * [VirtualBox v4.2.x][virtualbox].
-* [Vagrant v1.1.5][vagrant].
+* [Vagrant v1.2.1][vagrant].
 
 [osx-gcc-installer]: https://github.com/kennethreitz/osx-gcc-installer
 [xcode]: https://developer.apple.com/technologies/mac/#xcode

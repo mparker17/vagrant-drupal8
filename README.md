@@ -5,6 +5,7 @@ A plain Vagrant setup script to get Drupal 8 up and running quickly.
 ## Requirements ##
 
 * A Windows, Linux or Macintosh host machine.
+    * On Ubuntu Linux, you'll need to `sudo apt-get install nfs-kernel-server`.
     * On Macintosh, you'll need to run the [OSX GCC Installer][osx-gcc-installer] or install [Xcode][xcode] itself.
     * On Windows, you'll have to change the line in the `Vagrantfile` that says
 

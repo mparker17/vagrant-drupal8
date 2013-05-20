@@ -98,6 +98,13 @@ web_app site['svrname'] do
     allow_override "All"
     docroot site['svrdocroot']
 end
+file "#{site['drupalroot']}/settings.php" do
+    mode "0644"
+    action :touch
+    only_if do
+        File.exists?("#{site['drupalroot']}/settings.php")
+    end
+end
 template "#{site['drupalroot']}/settings.php" do
   source "settings_d8.php.erb"
   variables(

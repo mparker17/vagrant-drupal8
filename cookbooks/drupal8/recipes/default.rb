@@ -59,6 +59,12 @@ php_pear "drush" do
     channel "pear.drush.org"
     action :install
 end
+bash "Install composer" do
+    code <<-EOF
+         wget -q -O - http://getcomposer.org/installer | php
+        mv composer.phar /usr/local/bin/composer
+    EOF
+end
 
 #
 # Apparently setting a user and group causes checkout to fail, so checkout as
@@ -112,4 +118,8 @@ template "#{site['drupalroot']}/settings.php" do
     :password => site['dbpassword'],
     :database => site['dbdatabase']
   )
+end
+bash "Install dependencies" do
+    cwd site['svrdocroot']
+    code "composer install"
 end

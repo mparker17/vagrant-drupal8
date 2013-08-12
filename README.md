@@ -34,7 +34,7 @@ A plain Vagrant setup script to get Drupal 8 up and running quickly.
 
         cd vagrant-drupal8
 
-3. Clone Drupal 8 into the webroot.
+3. Clone Drupal 8 into the document root.
 
         git clone --recursive --branch 8.x http://git.drupal.org/project/drupal.git data/html
 

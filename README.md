@@ -48,7 +48,7 @@ A plain Vagrant setup script to get Drupal 8 up and running quickly.
 
         127.0.0.1 drupal8.dev
 
-6. Access the virtual machine by going to `http://drupal8.dev:8080/` in a web browser.
+6. Install Drupal by going to `http://drupal8.dev:8080/install.php` in a web browser.
 
 ## Notes ##
 

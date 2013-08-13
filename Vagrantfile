@@ -4,7 +4,7 @@
 # @file
 # Specify settings for a Drupal webserver.
 #
-# Vagrant v1.1.4
+# Vagrant v1.2.7
 #
 Vagrant.configure("2") do |config|
   # Machine settings.

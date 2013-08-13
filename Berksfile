@@ -1,0 +1,8 @@
+cookbook "apache2"
+cookbook "build-essential"
+cookbook "database"
+cookbook "git"
+cookbook "mysql"
+cookbook "openssl"
+cookbook "php"
+cookbook "vim"

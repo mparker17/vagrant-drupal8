@@ -26,29 +26,34 @@ A plain Vagrant setup script to get Drupal 8 up and running quickly.
 
 ## Usage ##
 
-1. Clone the Vagrant setup files onto your computer somewhere:
+1. Install the necessary Vagrant plugins:
+
+        vagrant plugin install vagrant-omnibus
+        vagrant plugin install vagrant-berkshelf
+
+2. Clone the Vagrant setup files onto your computer somewhere:
 
         git clone --recursive git@github.com:mparker17/vagrant-drupal8.git
 
-2. Change into the directory you just created.
+3. Change into the directory you just created.
 
         cd vagrant-drupal8
 
-3. Clone Drupal 8 into the document root.
+4. Clone Drupal 8 into the document root.
 
         git clone --recursive --branch 8.x http://git.drupal.org/project/drupal.git data/html
 
-4. Start Vagrant.
+5. Start Vagrant.
 
         vagrant up
 
-5. Map `drupal8.dev` to the virtual machine in the host machine's `hosts` file.
+6. Map `drupal8.dev` to the virtual machine in the host machine's `hosts` file.
 
     Most of the time, the following line will work:
 
         127.0.0.1 drupal8.dev
 
-6. Install Drupal by going to `http://drupal8.dev:8080/install.php` in a web browser.
+7. Install Drupal by going to `http://drupal8.dev:8080/install.php` in a web browser.
 
 ## Notes ##
 

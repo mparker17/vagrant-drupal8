@@ -29,6 +29,7 @@ A plain Vagrant setup script to get Drupal 8 up and running quickly.
 1. Install the necessary Vagrant plugins:
 
         vagrant plugin install vagrant-omnibus
+        vagrant plugin install vagrant-berkshelf
 
 2. Clone the Vagrant setup files onto your computer somewhere:
 

@@ -20,6 +20,10 @@ Vagrant.configure("2") do |config|
   # SSH settings.
   config.ssh.forward_agent = true
 
+  # Enable berkshelf plugin to handle downloading cookbooks and their
+  # dependencies.
+  config.berkshelf.enabled = true
+
   #
   # Provision the machine.
   #

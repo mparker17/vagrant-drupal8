@@ -32,6 +32,7 @@ Vagrant.configure("2") do |config|
   # `add_recipe()` calls below **must already be present** in the directory
   # specified by `chef.cookbooks_path`. (i.e.: you git-clone--recursive'd).
   config.vm.provision :chef_solo do |chef|
+    config.omnibus.chef_version = :latest
     chef.cookbooks_path = "cookbooks"
 
     # Config.

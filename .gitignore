@@ -1,3 +1,7 @@
-data/html
-data/db/*.sql
+contrib-recipes/cookbooks/*
+contrib-recipes/data_bags/*
+contrib-recipes/roles/*
+contrib-recipes/tmp
+data/code
+data/*.sql
 .vagrant

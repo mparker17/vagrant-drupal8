@@ -1,0 +1,19 @@
+#!/usr/bin/env ruby
+#^syntax detection
+
+site 'http://community.opscode.com/api/v1'
+
+# Ubuntu machines.
+cookbook 'apt'
+
+# LAMP stack.
+cookbook 'mysql'
+cookbook 'apache2'
+cookbook 'php'
+
+# PHP applications.
+cookbook 'application_php'
+
+# Misc.
+cookbook 'database'
+cookbook 'git'

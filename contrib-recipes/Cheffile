@@ -17,3 +17,6 @@ cookbook 'application_php'
 # Misc.
 cookbook 'database'
 cookbook 'git'
+cookbook 'drush',
+  :github => "msonnabaum/chef-drush",
+  :ref => "master"

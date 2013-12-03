@@ -45,11 +45,20 @@ SITE
       build-essential (>= 0.0.0)
     yum (2.4.2)
 
+GIT
+  remote: https://github.com/msonnabaum/chef-drush
+  ref: master
+  sha: 44827b3224d58b7595c7edea928a959f03a65d4c
+  specs:
+    drush (0.10.0)
+      php (>= 0.99.0)
+
 DEPENDENCIES
   apache2 (>= 0)
   application_php (>= 0)
   apt (>= 0)
   database (>= 0)
+  drush (>= 0)
   git (>= 0)
   mysql (>= 0)
   php (>= 0)

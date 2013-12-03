@@ -23,7 +23,7 @@ SITE
       runit (>= 1.0.0)
       windows (>= 0.0.0)
       yum (>= 0.0.0)
-    mysql (4.0.4)
+    mysql (4.0.6)
       build-essential (~> 1.4)
       openssl (~> 1.1)
     openssl (1.1.0)

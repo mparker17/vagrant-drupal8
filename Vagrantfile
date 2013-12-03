@@ -48,7 +48,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # Applications we will need.
     chef.add_recipe "git"
     chef.add_recipe "apache2"
-    chef.add_recipe "database"
+    chef.add_recipe "database::mysql"
     chef.add_recipe "mysql::server"
     chef.add_recipe "mysql::client"
     chef.add_recipe "php"

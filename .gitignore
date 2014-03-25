@@ -1,7 +1,10 @@
-contrib-recipes/cookbooks/*
-contrib-recipes/data_bags/*
-contrib-recipes/roles/*
-contrib-recipes/tmp
-data/code
-data/*.sql
+# Vagrant's temp directory.
 .vagrant
+
+# Ignore most cookbooks. If you want to add one, you'll have to git add --force.
+# Also, ignore Librarian-Chef's temporary folder.
+cookbooks
+tmp
+
+# Finally, ignore the data directory.
+data

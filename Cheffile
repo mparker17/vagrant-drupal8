@@ -1,0 +1,9 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+site "http://community.opscode.com/api/v1"
+
+#
+# Guest OS and toolchain.
+#
+cookbook 'apt', '2.3.8'
+

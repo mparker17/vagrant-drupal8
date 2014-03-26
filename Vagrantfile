@@ -17,7 +17,9 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
-  config.vm.box = "hashicorp/precise64"
+  # The latest LTS of Ubuntu only supports PHP 5.3, and D8 needs at least 5.4.
+  # If we can't use an LTS, we may as well use the latest Ubuntu.
+  config.vm.box = "chef/ubuntu-13.10"
 
   config.vm.provider "virtualbox" do |vb|
     vb.memory = 1024
@@ -39,8 +41,30 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # Guest OS and toolchain.
     chef.add_recipe "apt::default"
 
+    # Drupal.
+    chef.add_recipe "php"
+
     # Settings.
     chef.json = {
+      "php" => {
+        # We need some additional packages. Assumes a Ubuntu guest. Probably not
+        # the best way to go about this right now, but it's a start.
+        "packages" => %w{ php5-cgi php5 php5-dev php5-cli php-pear php5-curl php5-xdebug },
+        "directives" => {
+          # Sadly, the php cookbook tries to output everything we pass in here
+          # as a string for some reason, so there's no way we can use the nice,
+          # friendly E_ALL & ~E_NOTICE constants. The best we can do is output
+          # a string that contains a plain old integer.
+          # According to http://php.net/manual/errorfunc.constants.php,
+          # E_ALL = 32767, E_NOTICE = 8, so E_ALL & ~E_NOTICE = E_ALL - E_NOTICE
+          # = 32767 - 8 = 32759.
+          "error_reporting" => 32759,
+          "safe_mode" => "off",
+          # This might be a bit big, but D8's memory usage has varied a bit over
+          # it's development cycle, so better safe than sorry I guess.
+          "memory_limit" => "128M"
+        }
+      }
     }
   end
 

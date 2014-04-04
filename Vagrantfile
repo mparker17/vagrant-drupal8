@@ -5,7 +5,7 @@
 #
 # Required plugins:
 # - [vagrant-omnibus](https://github.com/schisamo/vagrant-omnibus)
-# - [librarian-chef](https://github.com/applicationsonline/librarian-chef)
+# - [librarian-chef](https://github.com/jimmycuadra/vagrant-librarian-chef)
 #
 # Recommended plugins:
 # - A [Local Domain Resolution plugin](https://github.com/mitchellh/vagrant/wiki/Available-Vagrant-Plugins#local-domain-resolution)
